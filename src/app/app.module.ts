@@ -9,6 +9,7 @@ import { EditServerComponent } from './servers/edit-server/edit-server.component
 import { ServerComponent } from './servers/server/server.component';
 import { FormsModule } from '@angular/forms';
 import { ServersService } from './servers/servers.service';
+import { UserComponent } from './users/user/user.component';
 
 @NgModule({
   imports: [
@@ -21,8 +22,9 @@ import { ServersService } from './servers/servers.service';
     HomeComponent,
     ServersComponent,
     ServerComponent,
-    UsersComponent,
     EditServerComponent,
+    UsersComponent,
+    UserComponent,
   ],
   providers: [ServersService],
   bootstrap: [AppComponent]
