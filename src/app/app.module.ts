@@ -10,12 +10,22 @@ import { ServerComponent } from './servers/server/server.component';
 import { FormsModule } from '@angular/forms';
 import { ServersService } from './servers/servers.service';
 import { UserComponent } from './users/user/user.component';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule, Routes } from '@angular/router';
+
+const routes: Routes = [
+  {path: '', component: HomeComponent},
+  {path: 'users', component: UsersComponent},
+  {path: 'servers', component: ServersComponent}
+]
 
 @NgModule({
   imports: [
     CommonModule,
     BrowserModule,
     FormsModule,
+    HttpClientModule,
+    RouterModule.forRoot(routes),
   ],
   declarations: [
     AppComponent,
