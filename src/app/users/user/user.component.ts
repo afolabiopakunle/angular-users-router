@@ -9,10 +9,14 @@ import { ActivatedRoute } from '@angular/router';
 export class UserComponent implements OnInit {
 
   user: {id: number, name: string};
+
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
-    console.log(this.route.snapshot.params['id'])
+    this.user = {
+      id: this.route.snapshot.params['id'],
+      name: this.route.snapshot.params['name']
+    }
   }
 
 }
