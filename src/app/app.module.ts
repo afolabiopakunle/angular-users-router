@@ -12,6 +12,7 @@ import { ServersService } from './servers/servers.service';
 import { UserComponent } from './users/user/user.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -23,6 +24,7 @@ const routes: Routes = [
   children: [
     {path: ':id', component: ServerComponent},
     {path: ':id/edit', component: EditServerComponent},]},
+  {path: '**', component: PageNotFoundComponent}  
 ]
 
 @NgModule({
@@ -41,6 +43,7 @@ const routes: Routes = [
     EditServerComponent,
     UsersComponent,
     UserComponent,
+    PageNotFoundComponent,
   ],
   providers: [ServersService],
   bootstrap: [AppComponent]
