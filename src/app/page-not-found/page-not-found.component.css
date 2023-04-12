@@ -1,0 +1,7 @@
+.bg-danger {
+  padding: 2rem;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+  font-weight: 900;
+}

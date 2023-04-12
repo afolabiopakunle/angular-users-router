@@ -24,7 +24,8 @@ const routes: Routes = [
   children: [
     {path: ':id', component: ServerComponent},
     {path: ':id/edit', component: EditServerComponent},]},
-  {path: '**', component: PageNotFoundComponent}  
+  {path: 'not-found', component: PageNotFoundComponent},  
+  {path: '**', redirectTo: 'not-found', pathMatch: 'full'},
 ]
 
 @NgModule({
