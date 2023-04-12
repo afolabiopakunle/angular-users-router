@@ -9,6 +9,7 @@
 <div class="form-group">
   <label for="status">Server Status</label>
   <select
+    [disabled]='!allowEdit'
     id="status"
     class="form-control"
     [(ngModel)]="serverStatus">

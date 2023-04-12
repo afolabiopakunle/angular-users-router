@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { ServersService } from '../servers.service';
 
 @Component({
@@ -11,13 +12,24 @@ export class EditServerComponent implements OnInit {
   server: {id: number, name: string, status: string};
   serverName = '';
   serverStatus = '';
+  allowEdit = false;
 
-  constructor(private serversService: ServersService) { }
+  constructor(
+    private serversService: ServersService,
+    private route: ActivatedRoute,
+    ) { }
 
   ngOnInit() {
-    this.server = this.serversService.getServer(1);
-    this.serverName = this.server.name;
-    this.serverStatus = this.server.status;
+    this.route.queryParams.subscribe(query => {
+        console.log(query)
+    })
+    this.route.params.subscribe(params => {
+      const id = +params.id;
+      this.server = this.serversService.getServer(id);
+      this.serverName = this.server.name;
+      this.serverStatus = this.server.status;
+    })
+
   }
 
   onUpdateServer() {
