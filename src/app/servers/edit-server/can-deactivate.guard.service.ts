@@ -10,8 +10,8 @@ export class CanDeactivateGuard implements CanDeactivate<CanDeactivateGuard> {
   canDeactivate(component: CanComponentDeactivate,
                 currentRoute: ActivatedRouteSnapshot,
                 currentState: RouterStateSnapshot,
-                nextState?: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-                  console.log('candea')
+                nextState?: RouterStateSnapshot,
+                ): Observable<boolean> | Promise<boolean> | boolean {
                   return component.canDeactivate();
                 }
 }
