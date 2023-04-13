@@ -13,6 +13,8 @@ import { UserComponent } from './users/user/user.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AppRoutingModule } from './app-routing.module';
+import { AuthGuard } from './auth.guard';
+import { AuthService } from './auth.service';
 
 @NgModule({
   imports: [
@@ -32,7 +34,7 @@ import { AppRoutingModule } from './app-routing.module';
     UserComponent,
     PageNotFoundComponent,
   ],
-  providers: [ServersService],
+  providers: [ServersService, AuthGuard, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
