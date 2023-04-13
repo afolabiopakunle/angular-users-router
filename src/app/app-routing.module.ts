@@ -19,7 +19,8 @@ const routes: Routes = [
   {path: 'servers', canActivateChild: [AuthGuard], component: ServersComponent, 
   children: [
     {path: ':id', component: ServerComponent},
-    {path: ':id/edit', canDeactivate: [CanDeactivateGuard], component: EditServerComponent},]},
+    {path: ':id/edit', component: EditServerComponent,  canDeactivate: [CanDeactivateGuard],},
+  ]},
   {path: 'not-found', component: PageNotFoundComponent},  
   {path: '**', redirectTo: 'not-found', pathMatch: 'full'},
 ]

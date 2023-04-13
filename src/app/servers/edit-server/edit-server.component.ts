@@ -45,8 +45,10 @@ export class EditServerComponent implements OnInit, CanComponentDeactivate {
     if(!this.allowEdit) {
       return true
     }
-    if((this.serverName !== this.server.name) || (this.serverStatus !== this.server.status) && !this.changeSaved) {
+    if((this.serverName !== this.server.name) || (this.serverStatus !== this.server.status) && (!this.changeSaved)) {
       return confirm('Do you want to discard the changes?')
+    } else {
+      return true;
     }
   }
 }
